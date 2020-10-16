@@ -95,6 +95,11 @@
 }
 .icon{color:green;}
 
+.card-effect:hover{
+  background-color: #FBD062;
+  color: white;
+  text-decoration: none;
+}
 /* ---------------@meida section-------------------- */
 @media(max-width:992px){
   .header-container{
