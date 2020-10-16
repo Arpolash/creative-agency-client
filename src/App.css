@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+  *{padding: 0;
+  margin: 0;
+  box-sizing: border-box
+  ;}
+/* -------------global css--------------------------- */
+.btn-brand{
+  background-color: black;
+  color: white;
+  padding: 5px 18px;
+  border-radius: 5px;
+}
+.bg-brand{
+  background-color: rgb(235, 237, 241);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ----------------header css-------------------------- */
+.header-container{
+  width: 90%;
+  height: 515px;
+  margin: 0 auto;
+  background-color: #FBD062;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 75%, 0% 100%);
+}
+/* 
+----------------our customer section css --------------- */
+.customer-container ul li{
+  margin: 0 30px;
+}
+.customer-container img{
+  width: 130px;
+  height: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* -------------service section css----------------------- */
+.card{
+  border: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* -------------------carousel section css ---------------- */
+.carousel-container{
+  background-color: rgb(37, 36, 53);
+  width: 90%;
+  margin: 0 auto;
+  height: 80vh;
+  overflow: hidden;
+}
+.carousel-main{
+  margin-left: 130px;
+ 
+}
+.slide{
+  position: relative;
+}
+.carousel-indicators{
+  position: absolute;
+  left: 0;
+  bottom: -80px;
+}
+
+/* --------------------feedback section css --------------- */
+.card-footer{
+  border:none;
+  background-color: transparent;
+}
+
+/* ---------------footer section css ------------------- */
+.footer{
+  width: 90%;
+  margin: 0 auto;
+  background-color: #FBD062;
+}
+
+/* ----------------form section css------------------ */
+.form{
+  background-color: rgb(238, 234, 234);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  height: 300px;
 }
-
-.App-link {
-  color: #61dafb;
+.form button{
+  background-color: transparent;
+  border-radius: 20px;
+  color: rgb(24, 40, 43);
+  margin-bottom: 15px;
 }
+.form button:focus{
+  outline: transparent;
+}
+.form p span{
+  color: blue;
+}
+.icon{color:green;}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ---------------@meida section-------------------- */
+@media(max-width:992px){
+  .header-container{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #FBD062;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 0% 100%);
   }
-  to {
-    transform: rotate(360deg);
+  .customer-container ul li{
+    margin: 0 10px;
   }
+  .customer-container img{
+    width:55px;
+    height: 40px;
+  }
+  .carousel-main{
+    margin-left: 10px;
+   
+  }
+ 
+  
 }

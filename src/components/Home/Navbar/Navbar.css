@@ -1,0 +1,12 @@
+.navbar img{
+    height: 40px;
+  }
+ 
+ #navbarNav a:hover {
+   border-bottom: 3px solid green;
+ }
+ 
+ #navbarNav a.active {
+   border-bottom: 3px solid green;
+ }
+ 
