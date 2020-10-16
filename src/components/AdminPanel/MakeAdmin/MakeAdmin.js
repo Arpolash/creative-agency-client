@@ -1,8 +1,22 @@
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../images/logos/logo.png';
 import Sidebar from '../../Dashboard/Sidebar/Sidebar';
 const MakeAdmin = () => {
+    const [info,setInfo] = useState({});
+    const handleBlur = e =>{
+        const newInfo = {...info};
+        newInfo[e.target.name] = e.target.value;
+        setInfo(newInfo)
+    }
+const handleSubmit = () =>{
+    fetch('https://shielded-earth-58023.herokuapp.com/addAdmin',{
+        method : 'POST',
+        headers : {'content-type' : 'application/json'},
+        body : JSON.stringify(info)
+    })
+}
     return (
         <section>
         <div className="container">
@@ -13,13 +27,13 @@ const MakeAdmin = () => {
             </div>
             <div className="col-md-9 bg-brand">
                
-            <form action="https://shielded-earth-58023.herokuapp.com/addAdmin" method="post" className="mt-5">
-                        <div className="form-group">
+               <form onSubmit={handleSubmit}>
+               <div className="form-group">
                             <label htmlFor="email" className="font-weight-bold">Email :</label>
-                            <input type="email" className="form-control w-50" name="email" placeholder="Enter Email"/>
+                            <input type="email" onBlur={handleBlur} className="form-control w-50" name="email" placeholder="Enter Email"/>
                         </div>
-                         <button type="submit" className="btn-brand px-5">Submit</button>
-                    </form>
+                        <button type="submit" className="btn-brand px-5">Submit</button>
+               </form>
                
             </div>
             </div>
