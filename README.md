@@ -8,3 +8,7 @@
 - This website has admin panel .
 
 - Admin can add or cancel the course if he wants.
+
+### Technology 
+
+#### React, Router,Node.js,MongoDB,Firebase,Netlify
