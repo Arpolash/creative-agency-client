@@ -7,15 +7,20 @@ import { UserContext } from '../../../App';
 import logo from '../../../images/logos/logo.png'
 import Sidebar from '../Sidebar/Sidebar';
 import ServiceListDetails from './ServiceListDetails';
+import { CircularProgress } from '@material-ui/core';
 
 const ServiceList = () => {
+    const [isLoading, setIsLoading] = useState(true);
     const [loggedInUser,setLoggedInUser] = useContext(UserContext)
     const [user,setUser] = useState([])
     console.log(user)
     useEffect(() =>{
         fetch('https://shielded-earth-58023.herokuapp.com/userServiceList?email='+sessionStorage.getItem('token'))
         .then(res => res.json())
-        .then(data => setUser(data))
+        .then(data => {
+            setIsLoading(false)
+            setUser(data)
+        })
     },[])
     return (
         <div className="container">
@@ -25,7 +30,9 @@ const ServiceList = () => {
                 <Sidebar></Sidebar>
             </div>
             <div className="col-md-9 bg-brand ">
-               <div className="row">
+               <div className="row mt-3">
+               {isLoading && <CircularProgress className='mx-auto' disableShrink>
+                </CircularProgress>}
                {
                     user.map(data => <ServiceListDetails serviceList={data}></ServiceListDetails>)
                 }

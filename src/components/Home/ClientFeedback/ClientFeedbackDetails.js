@@ -3,7 +3,7 @@ import React from 'react';
 const ClientFeedbackDetails = ({feedback}) => {
     return (
         <div className="col-md-4 col-12 mb-5">
-            <div className="card h-100 p-3 shadow">
+            <div className="card card-effect h-100 p-3 shadow">
                 <div className="card-body row">
                     <div className="col-md-4">
                     <img  className="card-img w-100"  src={`data:image/png;base64,${feedback.image.img}`} alt="not found"/>

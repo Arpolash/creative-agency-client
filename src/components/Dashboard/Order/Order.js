@@ -20,7 +20,9 @@ const handleSubmit = () =>{
     })
 }
     return (
-        <div className="row bg-brand py-5">
+        <>
+           <h3 className="text-center">Order Now</h3>
+        <div className="row bg-brand py-3">
             <div className="col-md-6">
 
            
@@ -29,7 +31,7 @@ const handleSubmit = () =>{
                             <input type="text" onBlur={handleBlur}  className="form-control" name="name" placeholder="Your name/Company's name"/>
                         </div>
                         <div className="form-group">
-                            <input type="email" onBlur={handleBlur}  className="form-control" name="email" placeholder="Your email address"/>
+                            <input type="email" onBlur={handleBlur}  className="form-control" name="email" value={sessionStorage.getItem('token')}/>
                         </div>
                         <div className="form-group">
                             <input type="text" onBlur={handleBlur}  className="form-control" name="courseName" value={loggedInUser.courseName}/>
@@ -45,6 +47,7 @@ const handleSubmit = () =>{
             </div>
             <div className="col-md-6"></div>
         </div>
+        </>
     );
 };
 
